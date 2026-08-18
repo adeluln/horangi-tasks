@@ -173,7 +173,7 @@
   </div>
 
   <footer class="site-footer">
-    <p>호랑이 &nbsp;·&nbsp; Adela Ulin Nadhroh &nbsp;·&nbsp; 187241021 &nbsp;·&nbsp; Sistem Informasi UNAIR 2025</p>
+    <p>호랑이 &nbsp;·&nbsp; Halo aku adel &nbsp;·&nbsp; 187241021 &nbsp;·&nbsp; Sistem Informasi UNAIR 2026</p>
   </footer>
 
   <script src="{{ asset('js/tugas.js') }}"></script>
