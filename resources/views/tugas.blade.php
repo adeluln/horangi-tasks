@@ -25,6 +25,7 @@
         </svg>
         <span class="logo-text">Horangi<span class="logo-sub">Tasks</span></span>
       </div>
+
       <nav class="tab-nav" role="tablist">
         <button class="tab-btn active" data-tab="todo" role="tab" aria-selected="true">
           <span class="tab-badge">T8</span>To-Do List
@@ -52,7 +53,7 @@
     <section class="tab-panel active" id="tab-todo" role="tabpanel">
       <div class="section-header">
         <h2 class="section-title">Interactive To-Do List</h2>
-        <p class="section-desc">Tambah, selesaikan, dan hapus tugas. Data tersimpan di <code>localStorage</code>.</p>
+        <p class="section-desc">Tambah, selesaikan, hapus, dan filter tugas berdasarkan status. Data tersimpan di <code>localStorage</code>.</p>
       </div>
 
       <div class="card todo-card">
@@ -66,19 +67,27 @@
           <button id="todo-add-btn" class="btn-primary">+ Tambah</button>
         </div>
 
+        <!-- FILTER TASK -->
         <div class="todo-filters">
-          <div class="filter-group">
-            <button class="filter-btn active" data-filter="all">Semua</button>
-            <button class="filter-btn" data-filter="active">Aktif</button>
-            <button class="filter-btn" data-filter="done">Selesai</button>
+          <div class="filter-group" aria-label="Filter tugas berdasarkan status">
+            <button class="filter-btn active" data-filter="all">
+              Semua <span class="filter-count" id="filter-count-all">0</span>
+            </button>
+            <button class="filter-btn" data-filter="active">
+              Aktif <span class="filter-count" id="filter-count-active">0</span>
+            </button>
+            <button class="filter-btn" data-filter="done">
+              Selesai <span class="filter-count" id="filter-count-done">0</span>
+            </button>
           </div>
-          <span class="todo-count" id="todo-count">0 tugas</span>
+          <span class="todo-count" id="todo-count">0 aktif · 0 selesai</span>
         </div>
 
         <ul class="todo-list" id="todo-list"></ul>
+
         <div class="empty-state" id="todo-empty" style="display:none">
           <div class="empty-icon">🐯</div>
-          <p>Belum ada tugas nih, yuk tambahkan!</p>
+          <p id="todo-empty-text">Belum ada tugas nih, yuk tambahkan!</p>
         </div>
 
         <div class="todo-footer">
@@ -101,6 +110,7 @@
             <label class="field-label">Cari produk</label>
             <input type="text" id="arr-search" class="field-input" placeholder="Nama produk..." />
           </div>
+
           <div class="control-group">
             <label class="field-label">Kategori</label>
             <select id="arr-category" class="field-select">
@@ -111,6 +121,7 @@
               <option value="Dessert">Dessert</option>
             </select>
           </div>
+
           <div class="control-group">
             <label class="field-label">Urutkan</label>
             <select id="arr-sort" class="field-select">
@@ -122,6 +133,7 @@
               <option value="stock-asc">Stok Terendah</option>
             </select>
           </div>
+
           <div class="control-group">
             <label class="field-label">Harga maks (Rp)</label>
             <input type="number" id="arr-maxprice" class="field-input" placeholder="contoh: 50000" min="0" />
@@ -147,6 +159,7 @@
             <input type="text" id="poke-search" class="field-input" placeholder="Cari nama/ID Pokémon..." />
             <button id="poke-search-btn" class="btn-primary">Cari</button>
           </div>
+
           <div class="fetch-load-group">
             <select id="poke-limit" class="field-select">
               <option value="12">12 Pokémon</option>
