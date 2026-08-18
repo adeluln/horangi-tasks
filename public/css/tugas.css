@@ -1,10 +1,3 @@
-/* ============================================================
-   tugas.css — Horangi Tasks
-   Palette: #2B5EA9 (blue) | #EBA9B5 (pink) | #F1EDE1 (cream)
-   Font: Fredoka (Google Fonts)
-   ============================================================ */
-
-/* ===== RESET & VARIABLES ===== */
 *, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
@@ -344,6 +337,27 @@ body {
 }
 .filter-btn:hover  { border-color: var(--blue); color: var(--blue); }
 .filter-btn.active { background: var(--blue); border-color: var(--blue); color: var(--white); }
+
+.filter-count {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 22px;
+  height: 22px;
+  margin-left: 5px;
+  padding: 0 6px;
+  border-radius: 999px;
+  background: var(--cream);
+  color: var(--blue);
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.filter-btn.active .filter-count {
+  background: rgba(255,255,255,0.22);
+  color: var(--white);
+}
 
 .todo-count {
   font-size: 13px;
